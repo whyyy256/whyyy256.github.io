@@ -27,7 +27,7 @@
 <meta property="og:description" content="集合论实用优先的公理化集合论。不加严格化地承认逻辑符号：$$\forall,\exists,\neg,\wedge,\vee,\to,\leftrightarrow$$ 朴素集合论概括公理：$X:&#x3D;{x|\varphi(x)}$是集合。其中$\varphi$是任意包含$x$的命题。  集合论应当理解为去定义“满足什么性质的对象是集合”，而非“集合有什么样的性质”。  仅定义到此的集合是不">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-09-23T09:18:00.886Z">
-<meta property="article:modified_time" content="2025-09-23T09:34:34.015Z">
+<meta property="article:modified_time" content="2025-09-23T12:05:30.223Z">
 <meta property="article:author" content="whyyy">
 <meta name="twitter:card" content="summary">
 
@@ -144,7 +144,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -202,7 +202,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-09-23 17:18:00 / 修改时间：17:34:34" itemprop="dateCreated datePublished" datetime="2025-09-23T17:18:00+08:00">2025-09-23</time>
+      <time title="创建时间：2025-09-23 17:18:00 / 修改时间：20:05:30" itemprop="dateCreated datePublished" datetime="2025-09-23T17:18:00+08:00">2025-09-23</time>
     </span>
 
   
@@ -221,7 +221,7 @@
 </blockquote>
 <p>仅定义到此的集合是不完全的定义。集合是集合，不是集合的就不是集合，有什么关系呢？未定义集合之间的关系，那么集合之间就是孤立的。</p>
 <blockquote>
-<p>这一段话中，把“集合”全部替换为“类”，就是NBG公理中对类的理解。</p>
+<p>这一段话中，把后两个“集合”替换为“类”，就是NBG公理中对类的理解。</p>
 </blockquote>
 <p>集合之间唯一基本的关系是属于，在集合论中，属于由如下方式定义：$$\forall X\exists Y(X\in Y)$$</p>
 <blockquote>
@@ -246,7 +246,7 @@
 <blockquote>
 <p>这就是在说$Y&#x3D;{x\in X|\varphi(x,p)}$是集合。</p>
 </blockquote>
-<p>分离公理模式和概括公理模式$X&#x3D;{x|\varphi(x)}$非常相似，但分离公理模式通过要求全集$X$的预先存在规避了罗素悖论。<br>如果我们现在再写出罗素集$R$</p>
+<p>分离公理模式和概括公理模式$Y&#x3D;{x|\varphi(x)}$非常相似，但分离公理模式通过要求全集$X$的预先存在规避了罗素悖论。<br>如果我们现在再写出罗素集$R$（但现在要求先有全集$X$），写出$R&#x3D;{x\in X|x\notin x}$，分析：如果$R\in R$，那么$R\in X$且$R\notin R$，依然矛盾，说明$R\notin R$. 然后，如果$R\in X$，那么$R\in R$，矛盾，说明$R\notin X$，然后就没有矛盾了！<br>我们通过要求分离公理模式，要求全集的预先存在，发现$R\notin X,R\notin R$不会造成矛盾，解决了罗素悖论。<br>但先别急，仔细想一想这意味着什么；我们实际上确定了这样一个命题：<br>$$\forall X \exists R(R&#x3D;{x\in X|x\notin x})(R\notin X\wedge R\notin R)$$<br>用文字解释就是，对于任何集合$X$，总存在着集合$R$而$R\notin X$，也就是说，<strong>不存在所有集合的集合</strong>，或者，<strong>所有集合的“集合”不是集合</strong>，事实上所有集合的“集合”是真类。</p>
 
     </div>
 
@@ -258,15 +258,6 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2025/09/23/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-angle-left"></i> Hello World
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
     </footer>
   </article>
 </div>
