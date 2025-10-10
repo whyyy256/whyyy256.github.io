@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"whyyy256.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="小文章。 在有消去律的交换幺半群上定义“素”与“不可约”。">
+    <meta name="description" content="小文章。在有消去律的交换幺半群上定义“素”与“不可约”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Prime to Irreducible">
 <meta property="og:url" content="https://whyyy256.github.io/2025/10/10/maths/%E7%B4%A0%20%E8%95%B4%E5%90%AB%20%E4%B8%8D%E5%8F%AF%E7%BA%A6/index.html">
 <meta property="og:site_name" content="whyyy&#39;s blog">
-<meta property="og:description" content="小文章。 在有消去律的交换幺半群上定义“素”与“不可约”。">
+<meta property="og:description" content="小文章。在有消去律的交换幺半群上定义“素”与“不可约”。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-10T09:10:15.747Z">
-<meta property="article:modified_time" content="2025-10-10T13:28:04.091Z">
+<meta property="article:modified_time" content="2025-10-10T13:30:47.571Z">
 <meta property="article:author" content="whyyy">
 <meta property="article:tag" content="maths">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-10 17:10:15 / 修改时间：21:28:04" itemprop="dateCreated datePublished" datetime="2025-10-10T17:10:15+08:00">2025-10-10</time>
+      <time title="创建时间：2025-10-10 17:10:15 / 修改时间：21:30:47" itemprop="dateCreated datePublished" datetime="2025-10-10T17:10:15+08:00">2025-10-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -232,61 +232,15 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>小文章。<br>
-在有消去律的交换幺半群上定义“素”与“不可约”。</p>
+    <div class="post-body" itemprop="articleBody"><p>小文章。<br>在有消去律的交换幺半群上定义“素”与“不可约”。</p>
 <span id="more"></span>
-<p>定义有消去律的交换幺半群：<br>
-$$\begin{aligned}<br>
-&amp;(G,)\in \text{Ob(Cancellative Commutative Monoid)}\iff \<br>
-&amp;(\forall a\in G\forall b\in G(ab=ba\in G))\<br>
-\land&amp;(\forall a\in G\forall b\in G\forall c\in G((ab)c=a(bc))\<br>
-\land&amp; (\exists 1\in G\forall a\in G(1a=a1=a))\<br>
-\land&amp;(\forall a\in G\forall b\in G\forall c\in G((ac=bc)\to(a=b)))<br>
-\end{aligned}$$<br>
-这些是之后要用到的喵喵工具。</p>
-<p>定义 单位群：<br>
-$$G^<em>=\{u\in G:\exists v\in G(uv=vu=1)\}$$<br>
-$G^</em>$是群，非空（因为$1\in G^*$），并记这样的$v$为$u^{-1}$</p>
-<p>定义 相伴：<br>
-$$x\approx y\iff \exists u\in G^*(y=ux)$$<br>
-容易验证  $\approx$  是等价关系：<br>
-$$\begin{aligned}<br>
-&amp;\forall x\in G(x\approx x)\<br>
-&amp;\forall x\in G\forall y\in G\forall z\in G((x\approx y\land y\approx z)\to x\approx z)\<br>
-&amp;\forall x\in G\forall y\in G((x\approx y)\to (y\approx x))<br>
-\end{aligned}$$</p>
-<p>定义 整除：<br>
-$$x|y\iff \exists a\in G(y=ax)$$<br>
-容易验证  $|$ 是偏序关系：<br>
-$$\begin{aligned}<br>
-&amp;\forall x\in G(x|x)\<br>
-&amp;\forall x\in G\forall y\in G\forall z\in G((x|y\land y|z)\to x|z)\<br>
-&amp;\forall x\in G\forall y\in G((x|y\land y|x)\to x\approx y)(<em>)<br>
-\end{aligned}$$<br>
-前两条命题是显然的，但$(</em>)$命题是值得展开看看的。<br>
-显然地还有$$\forall x\in G\forall y\in G(x\approx y\to (x|y\land y|x))$$<br>
-于是$$(x|y\land y|x)\iff x\approx y$$<br>
-我们现在证明$(<em>)$命题：<br>
-$$\begin{aligned}<br>
-&amp;x|y\iff \exists a\in G(y=ax)\<br>
-&amp;y|x\iff \exists b\in G(x=by)\<br>
-&amp;\to y=ax=aby\<br>
-&amp;\land x=by=bax\<br>
-&amp;\to 1=ab=ba(**)\<br>
-&amp;\to a\in G^</em>\land b\in G^*\<br>
-&amp;\to x\approx y<br>
-\end{aligned}$$<br>
-其中，推导出$(**)$用到了消去律。</p>
-<p>定义 素元：<br>
-$$p\in P\subseteq G\iff p|st\to(p|s\lor p|t)$$</p>
-<p>定义 不可约元：<br>
-$$q\in I\subseteq G\iff q~st\to(q\approx s\lor q\approx t)$$</p>
-<p>定理：<br>
-$$st|x\to (s|x\lor t|x)$$<br>
-证明：由定义显然。<br>
-定理：素元是不可约元<br>
-$$P\subseteq I$$<br>
-证明：由定义显然。</p>
+<p>定义有消去律的交换幺半群：<br>$$\begin{aligned}<br>&amp;(G,)\in \text{Ob(Cancellative Commutative Monoid)}\iff \<br>&amp;(\forall a\in G\forall b\in G(ab&#x3D;ba\in G))\<br>\land&amp;(\forall a\in G\forall b\in G\forall c\in G((ab)c&#x3D;a(bc))\<br>\land&amp; (\exists 1\in G\forall a\in G(1a&#x3D;a1&#x3D;a))\<br>\land&amp;(\forall a\in G\forall b\in G\forall c\in G((ac&#x3D;bc)\to(a&#x3D;b)))<br>\end{aligned}$$<br>这些是之后要用到的喵喵工具。</p>
+<p>定义 单位群：<br>$$G^<em>&#x3D;\{u\in G:\exists v\in G(uv&#x3D;vu&#x3D;1)\}$$<br>$G^</em>$是群，非空（因为$1\in G^*$），并记这样的$v$为$u^{-1}$</p>
+<p>定义 相伴：<br>$$x\approx y\iff \exists u\in G^*(y&#x3D;ux)$$<br>容易验证  $\approx$  是等价关系：<br>$$\begin{aligned}<br>&amp;\forall x\in G(x\approx x)\<br>&amp;\forall x\in G\forall y\in G\forall z\in G((x\approx y\land y\approx z)\to x\approx z)\<br>&amp;\forall x\in G\forall y\in G((x\approx y)\to (y\approx x))<br>\end{aligned}$$</p>
+<p>定义 整除：<br>$$x|y\iff \exists a\in G(y&#x3D;ax)$$<br>容易验证  $|$ 是偏序关系：<br>$$\begin{aligned}<br>&amp;\forall x\in G(x|x)\<br>&amp;\forall x\in G\forall y\in G\forall z\in G((x|y\land y|z)\to x|z)\<br>&amp;\forall x\in G\forall y\in G((x|y\land y|x)\to x\approx y)(<em>)<br>\end{aligned}$$<br>前两条命题是显然的，但$(</em>)$命题是值得展开看看的。<br>显然地还有$$\forall x\in G\forall y\in G(x\approx y\to (x|y\land y|x))$$<br>于是$$(x|y\land y|x)\iff x\approx y$$<br>我们现在证明$(<em>)$命题：<br>$$\begin{aligned}<br>&amp;x|y\iff \exists a\in G(y&#x3D;ax)\<br>&amp;y|x\iff \exists b\in G(x&#x3D;by)\<br>&amp;\to y&#x3D;ax&#x3D;aby\<br>&amp;\land x&#x3D;by&#x3D;bax\<br>&amp;\to 1&#x3D;ab&#x3D;ba(**)\<br>&amp;\to a\in G^</em>\land b\in G^*\<br>&amp;\to x\approx y<br>\end{aligned}$$<br>其中，推导出$(**)$用到了消去律。</p>
+<p>定义 素元：<br>$$p\in P\subseteq G\iff p|st\to(p|s\lor p|t)$$</p>
+<p>定义 不可约元：<br>$$q\in I\subseteq G\iff q\approx st\to(q\approx s\lor q\approx t)$$</p>
+<p>定理：<br>$$st|x\to (s|x\lor t|x)$$<br>证明：由定义显然。<br>定理：素元是不可约元<br>$$P\subseteq I$$<br>证明：由定义显然。</p>
 
     </div>
 
