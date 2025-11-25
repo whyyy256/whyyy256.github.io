@@ -1,0 +1,531 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Legacy | whyyy's blog</title><meta name="author" content="whyyy"><meta name="copyright" content="whyyy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="过去的章节  这里存放一些以前写的文章 . 大多是无病呻吟 , 或是枯燥记录 , 可读性较低 . 按时间从晚到早排序 .  关于近代物理社(2025.9.5) 关于近代物理社 “我也不知道究竟是它改变了我命运，还是命运本就如此。” 言重，但在今日处境，宁愿如此。 严绍恒之办近代物理小组，大约惟我去得最多。后来，高一升高二，我与周沐希迟迟互不愿出头去当社长。临近学期末，又换班，或许我想，一个新的开始">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Legacy">
+<meta property="og:url" content="https://whyyy256.github.io/legacy/index.html">
+<meta property="og:site_name" content="whyyy&#39;s blog">
+<meta property="og:description" content="过去的章节  这里存放一些以前写的文章 . 大多是无病呻吟 , 或是枯燥记录 , 可读性较低 . 按时间从晚到早排序 .  关于近代物理社(2025.9.5) 关于近代物理社 “我也不知道究竟是它改变了我命运，还是命运本就如此。” 言重，但在今日处境，宁愿如此。 严绍恒之办近代物理小组，大约惟我去得最多。后来，高一升高二，我与周沐希迟迟互不愿出头去当社长。临近学期末，又换班，或许我想，一个新的开始">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://whyyy256.github.io/img/Kalabi_Yau_Maniod.jpg">
+<meta property="article:published_time" content="2025-11-25T08:50:02.000Z">
+<meta property="article:modified_time" content="2025-11-25T10:06:45.680Z">
+<meta property="article:author" content="whyyy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whyyy256.github.io/img/Kalabi_Yau_Maniod.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/Kalabi_Yau_Maniod.jpg"><link rel="canonical" href="https://whyyy256.github.io/legacy/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 6
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: false,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Legacy',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'page'
+}</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/Kalabi_Yau_Maniod.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/legacy"><i class="fa-fw fas fa-book"></i><span> Legacy</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/BBH.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/img/Kalabi_Yau_Maniod.jpg" alt="Logo"><span class="site-name">whyyy's blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/legacy"><i class="fa-fw fas fa-book"></i><span> Legacy</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">Legacy</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h1>过去的章节</h1>
+<hr>
+<p>这里存放一些以前写的文章 . 大多是无病呻吟 , 或是枯燥记录 , 可读性较低 .</p>
+<p>按时间从晚到早排序 .</p>
+<hr>
+<h2 id="关于近代物理社-2025-9-5">关于近代物理社(2025.9.5)</h2>
+<p>关于近代物理社<br>
+“我也不知道究竟是它改变了我命运，还是命运本就如此。”<br>
+言重，但在今日处境，宁愿如此。<br>
+严绍恒之办近代物理小组，大约惟我去得最多。后来，高一升高二，我与周沐希迟迟互不愿出头去当社长。临近学期末，又换班，或许我想，一个新的开始，强迫自己去多一种可能，是好的。于是去承担了这件事。<br>
+换班这件事，甚至说上四中而非良附，从结果上看，是经不住可能有人的嘲讽的：高考，在12班考成了车尾，在6班估计也只平均分，于良附，也不是第一。如果当初留在6班会不会高考更好一点？如果当初在良附刷题会不会高考更好一点？<br>
+未能登峰造极就难免会遭自己的怀疑。当然首先要否定如此机械的眼光，即平移自己而固定他人，同时否认了高考的随机性。甚至量子性都不深入我心，还在抱着机械决定论说话。<br>
+但是，虽然高考再多10分，20分，会上更好的大学。但是，这三年，怎能什么都没有留下？这是对我来说比高考分数更重要的。<br>
+樊梓童说，对于高中生来讲，我们这两届这几个人是有不小的特殊性的。我常常怕自己眼高手低，也常常不敢同意他这种话，但既然他是基于他自己上了一年大学之后说的，那我就先顺着这种思路说下去：竞赛生有很多，每年永远有国集金牌省队省一，但他们重心在于做题考试，而我们（至少我）当时并非指望竞赛来升学，所以相比做题考试，更多是纯粹出于兴趣。24届有四五个人凝聚，25届有余蛋昌龙在理论和考试都各有优势的人能拉起一支十多个人的队伍，26届则没有这样的人了。这是强随机了，完全是通过六百人中，刷新出这样有强个人能力的同学，才引领的一种风气。说这种风气很眼高手低，很浮躁，基于高考的评价体系就是这样的。但是，存在这样的人，使得能够吸引我、刘健韬、我维系的近物社、26届平行班做信竞的社长，这些本不在竞赛班圈子的人，能够发现自己的兴趣，这是很有意义的事情。<br>
+樊梓童说，即使是在上交，只要不是清北，他想在大一学场论，是找不到同学能跟他一起学的。我以为他们在群里只是在吹水。但他说，真想找一起学的同学，还只能是秦浩文，何亦白，他们本届本班学物理的同学。他说何亦白也常常说自己找不到同学能一起学。<br>
+我的水平是否需要担忧这种事情呢？从考试来讲是不能的，因为我完全不擅长考试。从学习速度来看，我理解的很慢。从动机来看，我一暑假没有学习了。那我为什么迟迟认定，自己“想学数学”呢？恐怕这已经是叶公好龙思想钢印了。数学分析我不想学，因为我不喜欢分析性的证明。实分析我学不动，因为高三上还敢有闲去看，然后看不懂。复分析我没认真学，因为当时急于去看留数定理但是前后都没看，看不懂。泛函分析，我一无所知。那难道我就能学懂代数吗？也未必，只是教材讲的群论是基础中的基础，抽代哪个不是大厚砖头，基础的东西，动机就这么点，只能花时间去啃。同时，光是看看考研线代题目，就够恶心的了。那我凭什么还认定自己“喜欢数学”呢？<br>
+我不知道，也永远无法知道。<br>
+相比数学，我似乎更像在成为民科。但民科也好听，还是思而不学则殆好听一点。很多命题稍加思考，便很容易超出数学，而上升到哲学的高度。我在想，表示论很大程度上是一种哲学。<br>
+樊梓童和秦浩文在给近物社做宣传时，想了一句话，“给每个人找到适合自己的物理”。我想这句话作为宣传是很难有效的，但是昨天想了想，我确实应该合于这样的状态。<br>
+脱离考试才能领悟到科学的伟力与神异。正如前文所说，我不愿意面对考试，但是我享受自由的学，自由的思考，自由的讨论，而这恰恰是在数学系反而不能给予我的。极端一点，如果我想学集合论，我应该去学逻辑学或者语言学而非数学。知乎有人说道，有哪本实分析教材是敢从集合论开始讲的呢？可测集，Borel集，之所以概念不明所以，是因为没有集合论基础，不能理解在ZFC下可以构造出多么病态的集合。说远了。为了如此的自由性，课少、无后顾之忧是更重要的。已知的同学，比未知的随机的同学更可靠。<br>
+另一方面，余昊宸说北大物院的同学也很少有像他那样学的那么多的。不过，有些是学得会不会之间的差别，有些是知道与不知道的差别。竞赛强校的竞赛生，也未有多少如余昊宸那样剧烈兴趣驱动的，我猜测更多是面对升学诱惑而竭力刷题——单有天赋和学得快已经不管用了，如今大量计算的竞赛题跟天赋没一点关系。但在这些人中，也有靠竞赛为升学路径，而非一生热爱的——当然，年轻人谈这些，是没法谈的，是一无所知的。<br>
+或许我正是在竞赛中，在一次次与余昊宸交流想法而被大水漫灌后，隐约意识到，自己不喜欢的一些东西：不喜欢动手实验；不喜欢技巧性强的牛顿力学；没有也不喜欢所谓的物理直觉；光是听听就不喜欢重整化；不喜欢计算特殊函数……我往往只喜欢优美理论中那些最优美的结论，乃至dirty proof也看过就作罢，只体悟结论。这些例子我能说的太多太多：stokes定理，系综理论……（思考了一会感觉很多也都忘的差不多了，一时只想起这么两个）加之听网上说物理不如数学好就业，后来我就很少把物理作为自己的理想专业，是经过没有太大成本的学习之后，知道自己喜欢什么，不喜欢什么之后的结果。<br>
+未完待续</p>
+<p>(已废止)</p>
+<h2 id="无题-2025-8-16">无题(2025.8.16)</h2>
+<p>昨天练车回来，中午，从大学城西站下车，骑小蓝，顺路去伟业路口吃完饭再回家。想着这么两步路就不再开一辆小蓝了，然后就拎着包走回去，穿西里过去。<br>
+​在地铁上看手机，忘记看见什么了，又想到“科研”这俩字。虽说看上去很光鲜亮丽，但无不是说背后艰苦的——我突然想，我对“科研”这两个字有概念吗？我没有。但想想陶敬亭的强基生物，这读博士毕业肯定是要“做科研”的吧；樊梓童,秦浩文,何亦白，我已不知道他们在学什么了，但从一些“导师”类似的字眼，也猜测他们大概也已经向这个目标狂奔了；余昊宸更不必提了：你说他们，在临上大学之际，有对“科研”的概念吗？恐怕都没有。<br>
+​然后思考，最接近“科研”的事是什么呢？我仔细想了很多，也没想出来，因此也就不能解释为什么在高三煎熬了一年，至今还对“学数学”抱着多么美好的幻想。为什么呢？<br>
+​我仔细想，认为最接近这两个字的事，应该是之前“用RP^2射影几何代数解决中学的非度量性质的圆锥曲线问题”。那时，我说高考后一定要研究这个，写出点东西来，送给杨凤文老师。但是一暑假都过去了，把这事都给忘了。又说，清北的同学们马上就开学军训了，而我能拉来一起玩这个的同学都上清北了——同学之中，清和北的还像只是换了个学校一样照常上学，而没有去这两个大大学的人反而都像是分散的异端——除了北工大，还有哪个学校能一下接收五十多个同一高中的人呢。<br>
+​我想，既然无法与之同行，那还是自己先实干起来吧。<br>
+​我突然想起来RP^2的R^3坐标表示其实是一个非忠实表示的表示论问题，然后也就解决了矢量三叉积化简公式出现加减法而不能计算的疑问：因为RP^2中元素实体不是那样的，你选R^3表示只是选一个代表元，那当然在同一个等式中只能选同一个代表元。<br>
+​我突然想起来严绍恒说他做ML要学测度论，Axler也写了一本测度论，基于对他写的done right的信任，我猜他写的测度论应该可读性也不错。前一天下午看了看那本书的目录，顺序挺正常。<br>
+​但是实分析还是太松散了，我想着回家要问问Deepseek老师实分析的主要内容和线索是什么。这时我正走过伟业西里大门一点，旁边是西里的丰巢柜，低着头拎着包在想上面那些问题。<br>
+​这时我突然看见右前方一个好像万佳琪的人。也早不认识了，而且四百多度的近视还戴着三年前配的275度的眼镜。看见这个形似万佳琪朋友圈发的自拍的人，拖着拖鞋，穿着睡衣像是出来拿快递。于是突然惊到，立刻扭头看向左前方，假装不认识地走了过去。但是也可能就是看错人了也可能。<br>
+​『那时我以为是在目睹，一个历史性的时刻，现在想想，这些事情是多么地微不足道。』《三体》中的这句话现在越读感触越深刻。难道高考的挫败不足以忘记过去的一切遗憾吗？难道未来更大的溃败不足以忘记一切高考的失意吗？<br>
+最大的遗忘是无。有人说，盲人的世界不是健康人闭上双眼所感受到的，而是睁一只眼闭一只眼后，闭上的眼睛所感受到的。我想这就是无。</p>
+<h2 id="静夜思-2025-8-9">静夜思(2025.8.9)</h2>
+<p>数学梦想的九九八十一难中的第一难是：没有选数学专业。<br>
+也不知道在后悔什么，执念什么。也不知道从什么时候根植于心的愿望，在远离很久后依旧这样顽固。已经很久没有翻开书了不是吗？<br>
+你把你自己变分了。人人以就业为目标，只关注始末态，而中间的路径被选择为最平庸最无趣的那一条。<br>
+或者强迫自己如此想：如果不能承受四年、或者一年的冷板凳，那也是不适合做研究的。做研究，在这个环境下听起来也很可怕。做研究，在世俗上没有最大的成功；但对于自身因学习获得的喜悦，并不需要世俗的研究；但若已经进入这种心外无物的境界，到今天可获得的公共资料，也足足够一个人学习终生的了。<br>
+然而，还是永远的懦弱，连追寻梦想的勇气都没有。一次次地被劝退，接受别人学不会的经验，到最后连门都不肯踏入就转身逃离。不是向前走，撞南墙，知道此路不通；更失去了逢山开路遇水搭桥的魄力；在镜中荆棘而脚下平阔的路上，被吓得不敢迈进一步。<br>
+就只去怀念高一放学坐在宿舍床上看线代的自己吧，你已经走的太远太近了。<br>
+以超光速越过事件视界，去拯救另一个世界中那个迷途中的人。但在这条路上，你最终能留下的，只有眼泪。<br>
+“求求你不要再这样研究平行公设了。”</p>
+<h2 id="盖拉赫烧银原子-2025-8-1">盖拉赫烧银原子(2025.8.1)</h2>
+<p>泰勒猫最近突然更新了，关于自旋的科学史，在合集里。火速抢了沙发后，点开合集看看这是哪个系列里的，看到了三期斯特恩-盖拉赫实验——这三期是去年暑假发的。<br>
+明确地，第一期是2024.7.8发的，可能是我自己看的；第二期是2024.7.12发的，应该是高二升高三的年级会，几个人出发去武汉学而思营的前一天，一群人在第三实验室，我在大屏上登自己的号放的——直到很久后才去退登；第三期是2024.7.15发的，此时已在武汉，集训营的第二天，晚上，下课回来，洗澡躺在床上临睡前，侧身盖被，耳边压着手机上扬声器听着的。<br>
+或许是视频本身质量最高，或许是在如此环境给我特别感受，第三期讲的故事使我记忆深刻。理论解释部分，对于去年的我应该是之前学过了——现在则尽遗忘了——但这部分的科学史是第一次听。<br>
+视频很长，我的概括能力也很差，昨天又把这视频听了一遍后，留下的印象正如题：盖拉赫烧银原子。<br>
+复杂精巧的炉子，实验的天才设计出了它；然后只不过就是那样一个炉子，看着它，夜以继日地烧。要烧数个月：要因为“劣质烟含硫”而显影银原子；“由于外部原因，论文里提到的实验研究必须暂时中断”，在放弃之际因为交通延误而检查发现更好的方法。<br>
+跌宕起伏而神迹，如何不心向往之呢。<br>
+唯有现实的引力沉重拉回伟大的幻想。如赵凯华编高中物理教材云，感谢每一个永动机发明者对热学的贡献。</p>
+<h2 id="无题-2025-6-4">无题(2025.6.4)</h2>
+<p>尽管时间所剩无几，又说不要急于总结自己18岁的人生，但面对一天更近一天的麻木、狂妄，再如何病急乱投医也疲惫了；直到此时，又陷入了绝望的境地——每每到这种时候，就又怀古伤今，祈图在又一次分析过去的故事中追求慰藉。<br>
+一个永远在追忆过去的人，初中在追忆小学，高中在追忆初中，今天在追忆昨天；面对未来，没有什么期许，只有无尽的恐惧。恐惧源于对平庸的不甘，但更深的是对孤寂本身的恐惧。复杂的原因早已无法深究，而与之相伴的事情久久难忘。<br>
+你希望有一个波澜壮阔的2025年吗？它必将是的。无论如何，高考已难以平静，高达峰，下云坠，或者将倾的大厦苟存在最后的考验。三年前，也是以这种心态走向了中考。<br>
+是窃喜吗？是侥幸吗？遇到那样的决定三年的巨大考试，它的录取分辨率比判卷不确定度还低。直到你得偿所愿，而长久仰慕如神像的人只可说“将等得起三年”，又是以什么样的心情走进四中呢？<br>
+那时说：“我不恰当地自比章北海，说一句‘没关系的，都一样’，希望褚岩们发展星舰地球。”而后自己却成为了褚岩。光墓来了，还逃得掉吗。<br>
+三年前，在统筹一的学校中报志愿时，所想的是：不要垫底就好。深不可测的伟力回响此世。一系列巨大的机缘巧合而走向了竞赛之路。<br>
+那不可笑吗？那些人是什么人？——往往初中早已开始学。而你初中时对高中的一切知识也只有畏惧，一无所知。<br>
+很多人的竞赛是不幸的，我也称不上幸运，但又长久地使自己窃喜：从未能真正模拟一次考试，往往三个小时八道题只能写两三个拿三四十分，真正到了十一学校，顶着发烧咳嗽和鼻炎，竟然拿到了北京市105名——这是你哪怕前一日、更何况中考报名志愿时所敢想象的吗？<br>
+人有深不可测的伟力。<br>
+只得念一念天恩祖德，今日一日不如一日的境况中，想想，也不会太崩摧了。<br>
+在此一次次模考中，又学会了反思考试——现在，又要我们考完一科忘掉一科——有此能力与魄力吗？<br>
+有人会在高考数学考完之后，也再拿出一张草稿纸算圆锥曲线，问：这是不是一个射影问题？——我或许一定将成为这样一个人了。<br>
+该睡觉了。无论如何，再睡几觉就都过去了，那时，想想那时去吃什么吧。</p>
+<h2 id="忧无终论-2025-5-13">忧无终论(2025.5.13)</h2>
+<p>人生则忧，忧无终，忧终则亡。<br>
+人皆有忧。新婴忧气，行人忧木，耄老忧土。万物有意者皆有忧，无意者如有忧。羊鹿忧草，狮虎忧羊鹿，鹫忧腐；菌如忧其存，毒如忧其传。一旦无忧，存则不可生，其亡也，失其意于旷世。<br>
+人外忧无终。外无极，故外忧无终。外如财、权，得之而忧之，忧终则失之。财近极如马，忧其财之守，犹涉政以保财。权近极如<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi></mrow><annotation encoding="application/x-tex">\xi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.04601em;">ξ</span></span></span></span>，忧其权之实，推虚学覆下议。然世无极财，世无极权，何为得财、得权？无。故其忧财不足多，忧权不足大，一忧之。无财如乞，无权如底，一忧其财与权不足用；忧而奋，及足用之日，又忧其不足守；及有足守之计，又忧其不传。是外无极，故外忧无尽无终。<br>
+人内忧无终。内无能，故内忧无终。人有内情，内志，内理。喜怒哀寂之内情，或独有，或共情。共情有度，世无全同人情。祈世有全同人情，则共喜、共怒、共哀、共寂，其情与一人同，其神何辩一二？亦忧。是唯有度共情，有度无情，言与行使之移变。<br>
+人内志时新，小志可成，大志不可成；可成者不称大志。大志或忧，或不忧，其为远之极，不可成，忧而何用？然往远，则忧近之路；见大志，则忧今之务；大志不本忧，其生忧。<br>
+世或有理，或尽理。理无尽，故忧理者忧无终。理忧上神，故孔子语：“朝闻道，夕死可矣。”非仅贤圣之爱道，亦理尽而人生无谓，神亡。是故求理者生则求理，而无知理，知理者亡。<br>
+食者忧外，而饥者唯忧食；全者忧内，而病残者唯忧身；达者忧万物，而黠者唯忧己。是忧者忧其忧，而不忧其忧者忧其不忧。内外之忧无尽，物我之忧相转。人生而伴忧，忧而生，生则忧；忧以神存，忧终而神亡。故不以终忧为止，唯进于新忧而已。</p>
+<h2 id="西城二模考后记-2025-5-10">西城二模考后记(2025.5.10)</h2>
+<p>如如低能的做题策略，如如救世主的考试心态<br>
+​Sunny说考试后要有总结，我觉得老师说得对<br>
+​鄙类一个半小时做了东城却连散文都没做到，是几次考试主观题得分率50%，开始转变做题方法，勉强认真读题认真试图读懂文章；然而这就导致做题速度大减。<br>
+​于是考语文时做的奇慢，20分钟艰难做完非连还错了选择，古文又半懂不懂又做了半个小时，还感觉选择能爆0（现在都没敢对答案）。古诗偏偏要分析读不懂的那句，默写下句想上句想不起来生生想了两分钟，红楼梦更是一点不会：<br>
+​停机德：停止投机的美德<br>
+​然后到了一个小时二十分钟才开始做散文，不会也没心情写，但是还是写了二十分钟。<br>
+​接着微写作选了二，却发现只会一句话来回说。<br>
+​最终以35分钟进入作文，我将呈现一篇30分大作<br>
+​<br>
+​然后就大慌，因为之前做数学也过于悠闲了。三十五分钟搞定选填，五十分钟做到概率，一小时做完第一遍概率<br>
+​但是我越想越觉得第二问做的不对，又思考，又计算<br>
+​本来直接求就可以的问题我却以为对立事件简单，然后算一大堆，最后算错了一个数，尽弃。此时，已经一小时二十分钟了。<br>
+​做完第一遍的时候我在想，要不先跳？但是又想，概率就跳了？真不要了？<br>
+​即是越是不愿失去的越得不到。<br>
+​现在我有四十分钟，有三道大题，怎么办？<br>
+​别慌。<br>
+​按照计划，是打算给三道大题各20分钟的。现在，不读21（2）了。那我就能卡点做完。<br>
+​巨大而震撼的伟力回响此世，深不可测的伟力回响此世。自从零模圆锥曲线做不出来，就极力研究。认真研究了射影性质——然后一模又没做出来。才发现一模是第三定义。认真做了分类——度量、仿射、射影（虽然现在仍然没搞明白是仿射结论而非射影结论的有什么）——终于因为海淀圆锥曲线太水才做出来。<br>
+​然而这个圆锥曲线像是纯纯的度量性质，问s+t的取值范围，那看来没有足够多的时间就完蛋了。<br>
+​算了吧，算了吧，能骗到多少过程是多少吧。<br>
+​x_N有那么复杂，现在化简还是待会化简？<br>
+​就现在吧。<br>
+​……<br>
+​竟然如此简洁？<br>
+​竟然是定值问题？<br>
+​竟然只是均值不等式？<br>
+​无上贤圣，能人百第，一笑。</p>
+<h2 id="永遇乐-悼西二物理-2025-5-8">永遇乐_悼西二物理(2025.5.8)</h2>
+<p>永遇乐·悼西二物理<br>
+天地星辰，引力宇宙，牛爱量后。空穹轨迹，至高无束，盾阻核截去。约化能动，角动恒守，我著逐点之术。遗计祸，积整不见，局微却猜一速！<br>
+竞上数月，中压广相，赢得三五奖幼。负功九试，云望高坠，百十金集入。孤行霞影，雪夜独路，怆泪退凝茶语。鸢心驻，相干再效，南门山登何处？</p>
+<p>翻译：西城二模最后一题考了天体运动，整个宇宙都是被引力支配着的，（研究引力的人）在牛顿和爱因斯坦之后就是研究量子引力的人了。火箭在天上走出轨迹，它的最高点不是约束，而是被地面阻拦、轨迹被地面截断。二体约化舍弃了动量守恒，但角动量和能量还守恒，我列了各个点的守恒方程。这是被惯性思维害了，看不见整体的几何，写出局部逐点方程后就只能猜是第一宇宙速度了！<br>
+想起数个月的物理竞赛，纪文琦压中了广相，最后很多人都只拿了省二省三。高三以来九次考试越考越差，就像从高处下坠的人还回望着云端，余昊宸曾常常说要进国集而保送。而今我独自在霞影与雪夜回家，悲怆的眼泪使得无心于四晚茶话会了。鸢飞戾天之心卡在那了，如果相干王能够再次大展身手，他将从哪开始攀登泰山呢？</p>
+<h2 id="哨遍-2025-5-4">哨遍(2025.5.4)</h2>
+<p>哨遍<br>
+高山矗前，离人上攀，先而复校学。粮封尽，余生觅之外。枕地望空夜，摇光。催人铃，心醉天地驱归。若夜正坐思有期。惜时矢已去，念今望昔，后日见今怀往故，回头却致明也缺。似梦里悲戚觉来欢。仁也遗计，狡亦息心，移我本性。<br>
+噫！三载三年近将逝，三人三友谁将守？又忘异乡独异客，忘我忘世神远飘，少长揖。怨愿泻地，愁仇上身，祭梦泣泪自醒。听乌鸦绕树啼春去，写花落春归春不离，炎日忆我意。天生破统计，为汝命上脱古轨。圣书传止，新道闻广，鲸落而万物生耳。四日过山登乾顶，笑屏前乘伞飞雨门。</p>
+<p>翻译：高考一天比一天近，不得不高考，提前回学校自习。食堂关门了，住宿生点外卖。躺在操场上看向夜空，天上有灯光在摇曳，打铃了，沉浸在操场上的人用被赶回去。在宿舍晚自习，呆坐出神冥想前途和未来。可惜时间一去不复返，看着当下，回望过去，然后在未来的一天回看今天时却发现今天在怀念过去，又导致明天也留下遗憾。应该梦里悲伤凄苦醒来才高兴。仁德的人最终也会留下诡计，狡黠的人最终也会平息图谋不轨之心，强力改变了他们的声名。<br>
+​噫！初中三年又高中三年最近就要过去了，这么多同学、这么多朋友谁会留在北京呢？可能又要独自去异地，忘记自己吧忘记世界吧让心灵飘去远方，幼稚的我和成熟的我相揖别。怨气和愿望一块散在地上，愁绪和仇恨爬上心身，使我在梦里也思索着，哭着，然后自己醒过来。听听窗外的乌鸦从初春啼到暮春，还得在考场上写《花落春仍在》，哪怕春天已经离去了，却实际上是炎炎夏日充盈着我的记忆。一定有人能打破统计经验，把别人命运改变。就像贤圣的言语不再被人相信，新的事迹得到广泛传播，摧毁了心中神像才得到了精神解放罢了。高考四天就像登山，不得不越过，不得不爬上天顶，嘲笑着雨天爬泰山时却在第三实验室大屏幕前边打伞假装飞到了南天门的一群逃亡主义者。</p>
+<p>二稿：<br>
+高山矗前，离人上攀，先而复校学。粮封尽，余生觅之外。枕地望空夜，摇光。催人铃，心醉天地驱归。若夜正坐思有期。惜时矢已去，念今望昔，后日见今怀往故，回头却致明也缺。似梦里悲戚觉来欢。仁也遗计，黠亦息心，除我本名。<br>
+噫！三载三年近将逝，三人三友谁将守？又忘异乡独异客，忘我救世神远行，少长揖。怨愿泻地，愁仇上身，祭梦泣泪自醒。听乌鸦绕树啼春去，写花落春归春不离，炎日是我忆。天生破统计，为汝命上脱古轨。圣书传止，新功闻远，鲸落而万物生耳。四日越山登穹顶，笑屏前乘伞飞雨门。</p>
+<h2 id="昙花-2025-4-26">昙花(2025.4.26)</h2>
+<p>——不见长河水，清浊俱不息。</p>
+<p>物理竞赛早已成为我高中记忆最无可磨灭的一部分；我长久地想要记录我的物理竞赛；长久地苦于旷日持久，难以事无巨细地记录——而我又是那样一个史官一样的人——于是长久搁置。<br>
+终当又一大山阻于前，才忆攀登往事，必以叙。</p>
+<p>声称竞赛两年，又纪文琦声称竞赛三年，有几天是极时在竞呢？三个月；暑假与九月，停作业，停课，赴武汉，晨昏往返学校。故称：三月竞赛。<br>
+有几天是极力在竞呢？恐唯有2024.9.21 9.00-12.00那三个小时；除此之外，有何时是以考试之势去模拟、练习的？又称：徒名。</p>
+<p>在复赛前一天的上午，于近代物理实验室，我才把40届决赛做了。下午，严绍恒，秦浩文，高天鹤回，送行我们。聚，余昊宸黑板写最后的复习内容：<br>
+阿贝正弦定理<br>
+偏振<br>
+晶体——这是光学；又一列，写：<br>
+范式气体<br>
+激波<br>
+自由程<br>
+混合熵<br>
+泻流<br>
+麦克斯韦（速率分布）——这是热学；又一列，写：<br>
+康普顿（散射）<br>
+辐射<br>
+托马斯进动</p>
+<p>或许其实大家都无心再做题了，如此的复习恐是聊胜于无，不过人群聚，抵抗未知的恐惧。严绍恒见到余昊宸在黑板上默康普顿散射，说，你们在复习这个？余昊宸指着黑板答，前边是已经复习完的了。而后严绍恒转与秦浩文低语，有失望之意。我站与后观此，更恐。<br>
+我是这样一个所谓的“竞赛生”：9月15日，我说：<br>
+『我觉得我实在是太搞笑了，一问难集国培连程书啥都没刷过<br>
+​一想到39 40都有难集原题，我怎么两天速刷两本难集』<br>
+于是第二天就要决战了，连武器都没摸过。<br>
+临走前操场合照，众人走于前，我又低走于后。合照毕，将走，我与余昊宸再回近物实验室收拾东西回家；将走，共祝加油，严绍恒约见我低沉意，又独说“王怀宇加油”，我挥手点头应。<br>
+是日多云，夕阳穿云隙下，映金光。<br>
+我与余昊宸再回近物实验室。桌上还有一包没吃完的薯片，旁边摆着朗道《量子电动力学》，地下还有铺着的废草稿纸，箱子里还有冰红茶与魔芋爽。我的桌上，最后放着几本书：朗道力学，亚赛题选，思博楷睿的题和答案，刘川电动力学和统计物理。准备把现代光学基础带回家最后背一背晶体，把难集带回家一晚上最后浏览。<br>
+将近九点半，回到家了。我急切地把热物理概念里的激波推导再背下来，然后这是已经十一点了，必须赶紧睡觉了，难集、现光基不可再看了。<br>
+第二天六点半从家出来，地铁上先眯了一小会，但是紧张的心再不能平静下来，我再打开知乎，把表面等离激元结论背下来——是的，只有背了——我快背下来——背下来。<br>
+“我需要时间。”——伽罗什——决斗前夜。</p>
+<p>玉泉路。<br>
+第二次来到这里，蓝天，白云，红楼。方圆正负之标，黑色“北京十一学校”大字于墙壁。于路边把早餐带来的汉堡吃掉，聚于门前。进门，合照，严绍恒，高天鹤，秦浩文从后门遁入，来送考。<br>
+酾酒临江，横槊赋诗。<br>
+走很远走进了教学楼，走进考场。监考老师冷狠若鹫，不语而威。查笔袋，掰卫生纸，拿走水杯——所幸当日我没有犯鼻炎。<br>
+九点响铃开考才开始发卷，而刘昌宁说他们考场被按卷不发十分钟；余昊宸曾说去年考试也被按卷不发，更有少给他印一页实验卷子。<br>
+至于考试，我那周日晚上及时做了记录：<br>
+『我看39 40最后一题都是大水题，<br>
+​昨天卷子一篇一篇发，响铃了才发下来第一张。看第一题，受迫振动。<br>
+​但是我受力分析极差，这东西看上去就能拉，但是我不敢<br>
+​看了几秒果断答题卡翻面，做第七题：前两问爽送，然后做第三问，这是费米分布？<br>
+​但我写出来费米分布，在考场上的紧张使我也不敢慢慢积多对数函数，更何况他的能量是离散的还有外场，算出来的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Phi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Φ</span></span></span></span>也不周期。<br>
+​吓坏了，跳到第六题。默写三问，最后看那从无穷远来到无穷远去的边界条件不敢导出来，想到计算量肯定小不了。又去做第五题。<br>
+​一看大喜，余老师前些天教我的自旋指标记号有大用，但再一想<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>θ</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9579em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9579em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>各不同，遂放弃，老老实实展：<br>
+​我前天做40决的表面等离激元时，都要每算一步都能错一遍量纲，我非常害怕我的计算，中间算错了正负号，零阶项竟然不是0，思考一会，发现是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mover accent="true"><mi>θ</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">-\hat{\theta}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0412em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9579em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1667em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>方向不对，修正对了；然而计算错误还是严重的出现了，所有能量都没乘<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>，草稿纸上是这样，或者是我忘了我直接在卷子上把<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>加上了，一考完看到答案就崩了，担心不要-26<br>
+​简直是幸运了。<br>
+​可惜第一题，第一题虽然从头错到尾但细看只有那一处看串行条件导致全题全错，可是在那种紧张的时候，在那样高信息密度的一堆条件中，我不在这错，也会在那错。可惜估计确实很难赶上省一了。』<br>
+结束是十二点。一出来，先见到了刘昌宁，大惊喜，对他说，第一题能拉格朗日方程。然而他一脸低沉，却说估计只有八十分了，又以为第一题不能拉。我遂不语。<br>
+本有共愿考完试去吃饭，然而一个个低沉意，散走了。<br>
+韩昊骋家长开车带韩昊骋，我，王子睿回学校附近。韩昊骋回家吃饭了，我和王子睿去和余昊宸，陈同格，何宛峰，傅圣涵去护国寺一饭店吃饭。余昊宸说，当年严绍恒，樊梓童，秦浩文，高天鹤四人考完也是在这里吃的饭，就是在这个桌子，就是在这个座位。</p>
+<h2 id="别样的抓人大战-2025-4-18">别样的抓人大战(2025.4.18)</h2>
+<p>春游那天，同学互相说话。他们说：“你敢不敢和我举行抓人大战？”豪爽的答应了：“我当然敢！”<br>
+我原本以为上次秋游雾霾天抓人已经玩腻了，带了飞盘，带了扑克牌，还带了朝阳一模数学卷子。在车上，还在唱着歌，打着牌，下着棋，突然就到地方了。<br>
+一下车，拍完照后，数人即聚在一起。“玩抓人的来啊——”于是又拉了群，又选了抓的人，即刻开始了。<br>
+上午小雨、一城绿心和公园你我。<br>
+或是路更多，或是能走的路更多，此时抓人没有彼时激烈。我第一个被郭浩渊抓了；褚明阳过一会被抓了；然后去围傅圣涵和陶敬亭。两个人把他们压到死角里，把在桥上；再看着位置共享，他们怎么还能走——从公园外边绕出去了。<br>
+过了一个小时只有如此几人被抓，结束了，然后即刻四散。我和郭浩渊，刘长田，何宛峰，曹朗镛正在此处，正好是个打卡点。打卡好，抓人玩完了，驰行，把那卡打了。<br>
+樊梓童说，他们去年也是博物馆图书馆二选一。他选的图书馆。在那里，他第一次翻开了温伯格量子场论。<br>
+此时也去看看吧。雨时断时续；雨越下越大。说要提前走了；现在，在这个很大的图书馆里，我有八分钟的时间参观；找到一个屏幕去搜书，搜到之后，赶紧拍一张照片，也算故地重游了。<br>
+北京城市副中心图书馆，很大，很空，高不见顶，盘旋阶梯，上有层书。低矮书架，一本于前示，抽屉藏一叠。边缘有桌，桌上插座，桌上平板，但很少有桌子。如盘山公路，栏杆上贴“非跑道”。落地大窗远望，雨——<br>
+只是变成景点的图书馆就再不是图书馆了。<br>
+堵在门口集合，久等人齐，就回去了。<br>
+雨越下越大，伞已经收起来了，从图书馆门口走到车，不需要走多远——享受享受此刻的雨吧。仅有此时，我带着伞而不带，雨淋而不湿，泥汤溅裤脚，水坑浸鞋面，戴着帽子、眼镜一片清静。<br>
+享受享受此刻的雨吧！让它落下世间浮土，洗净心灵。毕竟是，你高中最后一次春游了。<br>
+半夜好雪、一城浮华和人间你我。<br>
+等了这场雪有多久？从冬天一直等到春天，从雪一直等到雨。虽然前些天城区下雪了，却那天周末在家，房山不下雪。今天说房山下雪了，我却又在通州淋雨。<br>
+不知道。2023年冬天，最大的那场雪，学校变成住宿生乐园，满操场打雪仗，穿着最厚的羽绒服，带着最厚的手套，抓起一大块雪，把手套浸湿，把手冻冰凉，远远扔去——<br>
+但很快把操场门锁了。楼下铲雪又成了最好玩的事情。一边铲雪，一边打雪仗，被生生往衣服里砸进了一块雪——两天后发烧了。<br>
+为什么我们铲雪把雪铲成了一个坟样？<br>
+其实是为自己挖墓。<br>
+周五上午发烧回家，下午他们进去操场，画：<br>
+『听口50<br>
+四中win』<br>
+能win吗？<br>
+不能。<br>
+我无能为力了。<br>
+于是我们听口考前那一周，我不数次说“这周应该下大雪放假。”<br>
+可惜最终也没有等到那场雪。<br>
+可是最终也没有等到这场雪。</p>
+<p>昨天，考完了化学，孟海燕老师班开了一个化学分享会。我毕竟要和尤睿祺，朱出瑜，宋雯倩一块出去买今天午饭，留在这里蹭课。这场分享到六点半才结束，此时你想在食堂吃饭都没了。萨莉亚，路上遇到金雨航，看到孙雨傲的两张照片，还复刻了一下。<br>
+回到学校是正是下了二晚的课间，看见有人正在试图从操场铁门门缝钻进去，但卡住了。朱出瑜说此时夜风最适合散步了。但是我和尤睿祺是没有请假就出来了，宿管不久就去收考勤表。没有散步，就上楼回去自习了。一推门，竟王子睿，王跃冬，袁冯依在扫雷；一会郭浩渊竟回来了。<br>
+金雨航周三问我，周四晚自习能不能在宿舍上，我说，上晚自习多好，宿舍多没意思。<br>
+即是刻意的四晚茶话会。<br>
+两人扫雷，六人围桌而聊。<br>
+很快就十点了，郭浩渊说，能不能不回去，接着聊到十一点。<br>
+不能。<br>
+回到宿舍熄灯反而一声叹息。<br>
+朱出瑜在回学校的路上就说：以前以为期末是最后的茶话会了，下学期大家都没心情玩了，但是考完西城一模也在玩，考完海淀一模也要玩，还有西城二模、海淀二模，不必说以后再没有了。<br>
+但也不多了。</p>
+<p>『期末出分。<br>
+等待答疑的人上到晚自习。又无人的晚自习，欢快的零落话语对抗着静寂。彼时，数人答疑，仅两三人于班，睡觉。<br>
+如山一般的假期作业，再不能不写。约北理工自习，我言应急，勿等失上进之心。<br>
+寂静的最后的晚自习。前两日他们与11班、13班人看恐怖故事，而我再上天文台。<br>
+最后的晚自习，再过寒假就要高三下，彼时尚有心玩？<br>
+且珍惜高三上最后的晚自习，今夜后，即将一月不至校。<br>
+宏图大志与浓烈的情感在平淡生活中激起微不足道的波澜。不要给未来的自己做决定。<br>
+梦见下周就要高考，你有多害怕？<br>
+不久就会成真。<br>
+凛冬的凄冷弥漫着整个学校。』<br>
+——2025.1.17</p>
+<p>雨——我不喜欢雨！</p>
+<h2 id="唯一性证明-2025-4-15">唯一性证明(2025.4.15)</h2>
+<h2 id="明日又清明-2025-4-3">明日又清明(2025.4.3)</h2>
+<h2 id="阶梯-2025-3-20">阶梯(2025.3.20)</h2>
+<h2 id="古筝-2025-3-19">古筝(2025.3.19)</h2>
+<h2 id="审判日号-2025-3-18">审判日号(2025.3.18)</h2>
+<h2 id="对贬低霍金和捧高杨振宁的认识-2025-3-2">对贬低霍金和捧高杨振宁的认识(2025.3.2)</h2>
+<h2 id="记梦集">记梦集</h2>
+<h3 id="巨大的梦-2025-2-23">巨大的梦_2025.2.23</h3>
+<p>我、陶敬亭、郭子谋、贾溪湍、王宏锦、赵美兮、傅家炜、王一龙、陈知非、韩金彤、周沐希、沙宇飞、云帆去参加南京大学暑假营，时间2024.7.3至2024.7.19，前一半时间是校园体验，后一半时间是项目研究，中间有一天休息。我与周沐希、沙宇飞、云帆同宿舍。<br>
+有一顿饭，我、王宏锦、贾溪湍、傅家炜在楼内过道旁一间小屋吃，四个人蹲在茶几旁，其他人在外面大厅。待了一会儿觉得不应该在这里凑热闹，就起身叫傅家炜一起拿了点东西边走边吃去到大厅。<br>
+有约谈，在四楼，露天，旁边是马路，阳光斜射。等待时，有人找王一龙与陈知非，找不到，我问韩金彤他俩在哪，从玻璃围栏边指向三楼，他俩在三楼楼道的一个桌子上写作业，问为什么，应该是四楼阳光晃眼。<br>
+有人叫我，剧院有表演。我顺着四楼旁边的马路下坡往前走，走进剧院。看票，我的座位在一排的最右边，左边一个是赵美兮，她已经坐在那。我先去找爸爸，他开车来了，然后我就不住宿了，开车回家。然后每天爸爸开车来送我，开车来接我回北京。<br>
+稍微清醒些才意识到这有多不对劲。<br>
+在中间休息的那天，高二教我们的、高三不教我们的老师要找我们谈话。陶敬亭和郭子谋找我，我说我在北京，我忘了还有几天的后半部分。然后我又去了南京。<br>
+约谈时间和南京大学一个大活动撞上，我们骑车去找老师。断。然后就到了大活动上，四层四个悬浮式的方块拼成一个正方形，每层每块上都站着许多人。喧闹，前面主持人生气要求不要闹。此时，傅家炜在拿锤子敲四周的玻璃围栏，他敲出来一个好看的裂纹后又想敲第二个，但要把玻璃敲掉了也敲不出来。我跟他说玻璃碎了掉下去砸到人危险。<br>
+梦在担心如何做后半部分的项目研究中醒了，醒来立即忘记太多内容。</p>
+<h3 id="2025-2-13">2025.2.13</h3>
+<p>在学校大空地活动，形状如家，按化学班分班，我在韩冬班和他们从厕所出发，12班从小卧室出发。逆时针绕圈，并记录沿途看见的所有文物，并记录所有记录所有文物的人。因此我一上来就先写人名，逆着走，回12班队伍，写人名。准备写郭浩渊，有人说他伤了，进到大卧室，看见他在床上揉着身下另一个人，于是叫他快起来先赶路。赶回至衣架处，是五班队尾。<br>
+在四方大空地上绕圈跑，是四中活动。白晨阳把七班人也叫来一块跑。周老师在中间喊加油，万佳琪在旁边哭。周老师问为什么哭，万佳琪说崔承敏没来。我复读：“崔承敏没来？”却又赶紧跑，怕被听到。结束跑步，万佳琪问我崔承敏，如果我见到王一龙向他转告。我从自行车棚往回快走，遇到栏杆缓慢俯身行走。从内向外地走到综合楼门口，一群人涌入，王一龙与陈知非前后进入，我穿插他俩之间，在王一龙面前堵、顿住一下，又从右前方出去。立即万佳琪拍我右肩膀，意为让我现在就去说。此时王一龙已走上楼梯，我大声喊他名。他正要问为什么要用这么大声喊他名，旁边突然有一老师说，你俩先去办公室，礼堂是用这么大声说话的地方吗？转视万佳琪、王一龙，叹气，思考。<br>
+思考中醒。</p>
+<h3 id="2025-2-4">2025.2.4</h3>
+<p>学校在大土坑里，有将近十米深，进出都要爬梯子。左边右边各有一个梯子，中间挂着大旗。梯子是绳梯，麻绳穿起很粗的圆木，两节之间有一米多高，最低一级离地面有大概两米。<br>
+是新生入学与军训。很多人从梯子上爬上去，在上面列队，要带着很多东西。我好像是最后出来的，跟着前面人爬了上去后，与他们一起聚在一起说话等老师来。聊天中突然发现自己没带学生卡，听说要用，但是不回去拿。一会儿，列队行军，有的班往右跑，我们班往左跑，前面一个班好像是3班。个个带着帽子，穿着一样的土黄色衣服。走远后，前面是闪灯光的高楼，在大十字路口左转，一面墙在边上，看不到坑里的学校。<br>
+断。<br>
+宿舍在食堂里，在地下，食堂像菜市场，夜里也喧闹。将要睡觉，床是一排双人床，两人睡一床盖两被，枕头挂在墙上，极像教学楼小便池形状，把头放在圆形坑里睡觉。我与一新同学被安排在同一床。已熄灯。断。我去食堂要吃东西，点一菜，很久也没好。没有瓷砖的地面漆黑，昏暗的灯光，擦不干净的桌面。突然见大吵闹声，看是校领导来了。忘了怎地我很愤怒，好像和他们打架，再开宿舍门，开灯，突然发现那人不见了。这时好像有旁白：你改变了世界线。<br>
+断。</p>
+<h3 id="2025-1-25">2025.1.25</h3>
+<p>在如保密室开类似307一样晚课，但桌子不够，于是右后铺两垫子，我和数人坐在垫子上听课。疑因万佳琪石景山期末考得极好，把她调来四中，几次考试后还进了307，坐在第一排。<br>
+几天后，有事，肖振龙怒，减少许多上课名额，把垫子扔出去，只留松散几排桌子。万佳琪仍在第一排，我在第三排。有人让我要不要去和万佳琪说句话。犹豫许久也未去。</p>
+<h3 id="2024-12-26">2024.12.26</h3>
+<p>万佳琪,刘皓瑜至我班。我站在我座位附近，万佳琪站于教室前，刘皓瑜正在推门而入。仍旧模样。万佳琪在笑，脸红，刘皓瑜在绷，脸黑。<br>
+万佳琪：“好久不见。”<br>
+周围同学，我故意问：“你是哪位？”<br>
+万佳琪：“你连我都不认识了吗？”惊讶神情，睁大眼睛，一丝失望。<br>
+万佳琪与我出至外挂楼梯，若有话要说，给我了什么东西，不记得。<br>
+断。突然在路上，乘车，从下午一直开到深夜，绕路循环，想到万佳琪和刘皓瑜是否已经走了。场景有老家、小学等等，至近1:00回到家，夜静，家人均已睡。<br>
+断。万佳琪和刘皓瑜已走，留一粉红色书包于我座位上，空空，只有一信在包中，欲拿起打开，又被什么事耽搁。未及打开，梦醒。</p>
+<h3 id="2024-10-26">2024.10.26</h3>
+<p>语文高考在周三提前考掉了。</p>
+<h3 id="2024-10-14">2024.10.14</h3>
+<p>警报：“危险，小登们快跑！”<br>
+小爆炸，我逃。<br>
+去食堂吃饭，阴暗。要一炸酱面，请加面加酱，至于微波炉中加热，久不好，不见加热，却见红灯非常亮而闪。知危，大步绕众餐桌后跑。<br>
+警报：“危险！中登们快跑！”<br>
+几秒我从食堂跑至门前，门前挤满人。<br>
+巨大爆炸。脑振声，红光爆溢。<br>
+画面卡顿。<br>
+玻璃碎迸。我前挤人。<br>
+突醒。</p>
+<h3 id="2024-10-8">2024.10.8</h3>
+<p>活动交材料，我交近物社什么上去。回至此，上如超市电梯，至闸门，王雲汉,阎易恒等追至，欲交与我所要交材料，以为我未交，而已过截止时间。过闸门左转，四方舞台，灯光摇曳，四角有人言谈。过。前远方大舞台，演出。几时，白晨阳等五人上台表演，几时中休，有于左台下激泪。忆前日有言：“将予某礼”，原来指此意。<br>
+渐醒。</p>
+<h3 id="自杀器-2024-5-19">自杀器_2024.5.19</h3>
+<p>学校新购入了两台自杀器，用电的，像是一块垫子，只是躺下时候头放的地方通上高压电，瞬间失去意识死亡。肉体上大约是没有痛苦的，只需要克服心理的恐惧，其实也就躺下一下，就没了。<br>
+这两台自杀器放在保密室里，要用得排队。第一天，门外就排起了大长队。一下课，就有一堆人冲向那里；但是一个课间的时间只够两个人用的；上课铃响起后，这一帮人又垂头丧气地走回去上课了。<br>
+不记得哪个课间，终于轮到我了。跟我一块进来的是ict。我看他苦笑着，一不小心把脚放在了通电的地方，或许是他只有一只脚着地，没成回路，他并没有立刻死。然后他坐在垫子上，呼我，苦笑着，“一块来吧。”我也坐下，向后仰。他躺下了。我头也快碰到了。<br>
+我突然把头停住了，竭力地把头抬起来，坐起来。想，就这么死了，一切都对我来说就停止了，太可惜了。于是我站了起来，放弃了念头，走了出去。可惜我看ict已经没了动静，我又害怕，这不会要判刑吧。不知道。一天结束，照常睡觉。<br>
+第二天，一进学校楼里就看见一堆人围着在看什么东西。我使劲在外边望，使劲往里挤，勉强看清。“听说昨天死了11个人。”“是啊，这刚到第一天就这么多人。”<br>
+公告上写着9个人的名字，他们是因为用自杀器而被处分的。<br>
+我问别人，为什么只有9个人。<br>
+“有两个人等不及排队了，直接跳楼了。”</p>
+<h3 id="2024-2-24">2024.2.24</h3>
+<p>我要高考了，似乎是可以选一个学校作为高考前一段时间，深思熟虑之后，我选了北京九中。<br>
+有老师先给我们介绍了校园，进门一块大石头牌匾，右边是楼。<br>
+在九中里，万佳琪似乎是比我高一年级，我忘了她是几班，去找她而没有找到。教室的位置就如昊天九八班的位置，一出门就是楼梯。<br>
+在楼里的楼梯绕圈，上一层楼要拐四个角，楼梯窄只能并排两人，我上了一层楼，堵在楼梯上的人慢慢行进。<br>
+在学校里的电影院看了两场电影。第一次是和两个人（忘了是谁）一起去，并排三座，我记得座位号。第二次是我自己去，忘了座位号，以为跟上次一样，在电影院里看到了王一龙，想起他的座位和我挨着，去找他。看完后从电影院出来。电影院是平的，前后没有高度差。从电影院右边门出去，绕前后向楼梯下去，下一楼有一个大厅，很多人站着。<br>
+去大多功能厅开很多会，坐在最后一排。最后一排与倒数第二排隔得很开。最后一排右边椅子比左边椅子好。第一次会我坐在左边的最右边，忘了在我左边的是谁，右边的座位有纪文琦，傅圣涵，陶敬亭，何宛峰，迟墨染在围着纪文琦乐，被走过去的老师不让乐了。<br>
+大多功能厅有操场那么大，我看不到前边的万佳琪，但看到了前边一两排的赵嘉琛、郭芷汛，散场时听说解可欣也在里面。<br>
+散场后我们要去大多功能厅待着，从后门出去，向右，像爬山一样向右前上方走过一段水泥路。赵嘉琛走得最快，我紧跟他。再绕下去，到了小多功能厅。一进去，才发现为什么要白绕一圈，直接待在里面就好了，走进小多功能厅，转头跟后面刚过来的尤睿祺、钟原说：“这不就是绕了一圈，只是刚才那个门没开。”从小多功能厅前面出去，走进右边小门，在狭窄才通人的崎岖瓷砖路上走一圈，有一间屋子，想起来有人说过这是余昊宸他家。再走这样一段路，更险，一边悬空，底下是湖。走到合适位置，跳下去。又回到大多功能厅，这次坐最后一排右边。<br>
+又开会，会上主持人说了一句：“你们看最后一排左边的座位，它的设计像不像顽皮的小孩。”我竭力向前看，困难地辨出前排一两人。<br>
+散会后，我看到万佳琪在门外小操场跑步，及我出去，她恰巧跑完走了。激励我也去跑步，发现大操场门锁着，有人在里面上体育课，但却看到刘竞安在里面跑步。只能回去，发现多功能厅变成了操场，在上体育课，里面跑到上很多小孩如蜘蛛一般跑步，极快，使我不敢在队伍间隙穿过进入足球场。终于大大空隙中穿过去，足球场里面是我们在年级的人在跑步，我急着想去跟一个队伍，跟不上，一同掉队的陈意舒和张航鸣跟在我后边。老师让我拿瓶熵（？）一边跑一边滴，又说不要滴到皮肤上有人滴到皮肤上后截肢了。跑了几圈后停下来，我从老师后边绕了一下停住，发现熵滴到了我鞋上，急跟他说，他让我去操场左下角柜子里拿酒精涂上，我去。柜子里套四层保险箱，里面放一小瓶酒精，旁边的架子上有火柴和棉签。我就涂，先在脚上抹酒精。<br>
+闹铃响了。我都是半睡半醒做着这梦，清晰以为这闹铃是八点四十五的，结果是八点五十九的。急忙起，想到一整晚都在床上，哪里有熵什么的，终止了梦。</p>
+<h3 id="2024-2-21">2024.2.21</h3>
+<p>与万同桌坐于运动会开幕式上的足球场，如领导点评。临走，从看台下小门出。我说一句话（不知是什么），万扭头，危言：“我告诉你你的道理。你心胸小，度量小，能力小；脾气大，怨气大（等等，忘了）……在北京五环内，一个人开劳斯莱斯和沃尔沃，人们不会重视他们的区别；一个人开豪车与破衣服挤地铁……”（这话说的很离奇又无原头，但梦里却记得是这样的）<br>
+下一幕我在地铁的电梯前，耳边回响着万的话，怒而不听。下楼后变成了食堂。有很多15块钱的套餐盖饭，看上去不好吃；徘徊几圈，拿了一大盘16块钱的菜，疑似是炒蘑菇、肉，又去单拿米饭，又看到旁边好吃的菜，又觉得拿得不好。又想起万的话，又觉字字珠玑。<br>
+被叫醒的瞬间，不记得做梦。看到什么格言警句之类，突然想起做了个梦，忘了大半。</p>
+<h3 id="2024-2-4">2024.2.4</h3>
+<p>与叶老师答疑，叶老师让我证明这两个题，后叶老师组织全班考试证这两个题。<br>
+万佳琪不知为何又来我班。我见她于一办公室，惊，问是偶然来一次还是以后都转学上学，疑后者。回班，王嘉兴坐我左前，唐鈺琪站我前，万佳琪站我左后。有人问，我是否还知道她叫什么。“小碗”，我答，声音小，别人听为“小万”。万佳琪脸红而笑，王嘉兴、唐鈺琪乐，朱出瑜等人在我左惊叹“啊？”，意指原来我所说的正是这个人。叫出“小碗”后我心惊，恐万佳琪因此怒我，不让我叫她名。幸无反对。我说：“之前我做了一个梦，梦见万佳琪发微信与我寒暄两句，就真有她又发我微信。前几天我做了一个梦，梦见万佳琪要转来我们学校，今天就真来了。”众人乐。<br>
+然后梦断。很久后醒。</p>
+<h3 id="2023-12-12">2023.12.12</h3>
+<p>夜难眠，辗转反侧。<br>
+故人梦于梦，无之其由而来，坐于向教室。闻之，惊，往望。或梦，与友约而游学诸班，我而之此。<br>
+有登天之电梯行之，漫漫之升不见终。终而遗其物，反而取。漫漫路以为坠。梦断。<br>
+复梦。我于向教室，坐于故人前。时外语，师于下而巡察，就其动而其物落，我拾之。答曰“谢。”<br>
+有奇人伐我，匍匐逃而躲，沿路封门，见而阻之。</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/Kalabi_Yau_Maniod.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">whyyy</div><div class="author-info-description">我们不知道，我们也永远不可能知道。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="http://whyyy.ysepan.com/"><i class="fa fa-hdd"></i><span>My_ysepan</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">过去的章节</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%BF%91%E4%BB%A3%E7%89%A9%E7%90%86%E7%A4%BE-2025-9-5"><span class="toc-text">关于近代物理社(2025.9.5)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E9%A2%98-2025-8-16"><span class="toc-text">无题(2025.8.16)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E5%A4%9C%E6%80%9D-2025-8-9"><span class="toc-text">静夜思(2025.8.9)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%96%E6%8B%89%E8%B5%AB%E7%83%A7%E9%93%B6%E5%8E%9F%E5%AD%90-2025-8-1"><span class="toc-text">盖拉赫烧银原子(2025.8.1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E9%A2%98-2025-6-4"><span class="toc-text">无题(2025.6.4)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%A7%E6%97%A0%E7%BB%88%E8%AE%BA-2025-5-13"><span class="toc-text">忧无终论(2025.5.13)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A5%BF%E5%9F%8E%E4%BA%8C%E6%A8%A1%E8%80%83%E5%90%8E%E8%AE%B0-2025-5-10"><span class="toc-text">西城二模考后记(2025.5.10)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%B8%E9%81%87%E4%B9%90-%E6%82%BC%E8%A5%BF%E4%BA%8C%E7%89%A9%E7%90%86-2025-5-8"><span class="toc-text">永遇乐_悼西二物理(2025.5.8)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%A8%E9%81%8D-2025-5-4"><span class="toc-text">哨遍(2025.5.4)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%99%E8%8A%B1-2025-4-26"><span class="toc-text">昙花(2025.4.26)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%AB%E6%A0%B7%E7%9A%84%E6%8A%93%E4%BA%BA%E5%A4%A7%E6%88%98-2025-4-18"><span class="toc-text">别样的抓人大战(2025.4.18)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E6%80%A7%E8%AF%81%E6%98%8E-2025-4-15"><span class="toc-text">唯一性证明(2025.4.15)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%8E%E6%97%A5%E5%8F%88%E6%B8%85%E6%98%8E-2025-4-3"><span class="toc-text">明日又清明(2025.4.3)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B6%E6%A2%AF-2025-3-20"><span class="toc-text">阶梯(2025.3.20)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E7%AD%9D-2025-3-19"><span class="toc-text">古筝(2025.3.19)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A1%E5%88%A4%E6%97%A5%E5%8F%B7-2025-3-18"><span class="toc-text">审判日号(2025.3.18)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B4%AC%E4%BD%8E%E9%9C%8D%E9%87%91%E5%92%8C%E6%8D%A7%E9%AB%98%E6%9D%A8%E6%8C%AF%E5%AE%81%E7%9A%84%E8%AE%A4%E8%AF%86-2025-3-2"><span class="toc-text">对贬低霍金和捧高杨振宁的认识(2025.3.2)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E6%A2%A6%E9%9B%86"><span class="toc-text">记梦集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A8%E5%A4%A7%E7%9A%84%E6%A2%A6-2025-2-23"><span class="toc-text">巨大的梦_2025.2.23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-2-13"><span class="toc-text">2025.2.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-2-4"><span class="toc-text">2025.2.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2025-1-25"><span class="toc-text">2025.1.25</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-12-26"><span class="toc-text">2024.12.26</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-10-26"><span class="toc-text">2024.10.26</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-10-14"><span class="toc-text">2024.10.14</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-10-8"><span class="toc-text">2024.10.8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E6%9D%80%E5%99%A8-2024-5-19"><span class="toc-text">自杀器_2024.5.19</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-2-24"><span class="toc-text">2024.2.24</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-2-21"><span class="toc-text">2024.2.21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-2-4"><span class="toc-text">2024.2.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-12-12"><span class="toc-text">2023.12.12</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/24/maths/Lie_application01/" title="An application of Lie Theory in Linear Algebra">An application of Lie Theory in Linear Algebra</a><time datetime="2025-11-24T15:08:22.767Z" title="发表于 2025-11-24 23:08:22">2025-11-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/20/maths/Cauchy_Riemann_equations/" title="复函数的导数是复数">复函数的导数是复数</a><time datetime="2025-11-20T15:26:17.591Z" title="发表于 2025-11-20 23:26:17">2025-11-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/11/maths/Basic_Objectives_and_Methods_of_Classical_Analysis/" title="古典分析学基本目的和手段">古典分析学基本目的和手段</a><time datetime="2025-11-11T14:54:35.113Z" title="发表于 2025-11-11 22:54:35">2025-11-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/11/02/diary/Resistance/" title="抗争">抗争</a><time datetime="2025-11-02T12:23:12.938Z" title="发表于 2025-11-02 20:23:12">2025-11-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/15/maths/Set_Theory/" title="集合论">集合论</a><time datetime="2025-10-15T06:59:56.773Z" title="发表于 2025-10-15 14:59:56">2025-10-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/diary/"><span class="card-category-list-name">diary</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/maths/"><span class="card-category-list-name">maths</span><span class="card-category-list-count">5</span></a></li>
+          </ul></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/11/">
+            <span class="card-archive-list-date">
+              十一月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/10/">
+            <span class="card-archive-list-date">
+              十月 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/09/">
+            <span class="card-archive-list-date">
+              九月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 By whyyy</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.1"></script><script src="/js/main.js?v=5.5.1"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
